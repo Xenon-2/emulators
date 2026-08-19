@@ -166,6 +166,7 @@ namespace hdd
 		STATE WriteDataBuffer();
 		STATE ReadSectors();
 		STATE WriteSectors();
+		STATE FormatTrack();
 
 		bool m_dmaEnabled = false;
 		bool m_dmaPending = false;
@@ -317,8 +318,9 @@ namespace hdd
 			{ CMD::SENSE,             { "Sense",                 5,  &DeviceHardDrive::SenseStatus } },
 			{ CMD::FORMAT_DRIVE,      { "Format Drive",          5,  &DeviceHardDrive::NotImplemented } },
 			{ CMD::READ_VERIFY,       { "Read Verify",           5,  &DeviceHardDrive::NotImplemented } },
-			{ CMD::FORMAT_TRACK,      { "Format Track",          5,  &DeviceHardDrive::NotImplemented } },
-			{ CMD::FORMAT_BAD_TRACK,  { "Format Bad Track",      5,  &DeviceHardDrive::NotImplemented } },
+			//{ CMD::FORMAT_TRACK,      { "Format Track",          5,  &DeviceHardDrive::NotImplemented } },
+    		{ CMD::FORMAT_TRACK,	  { "Format Track",			 5,  &DeviceHardDrive::FormatTrack } }, 
+
 			{ CMD::READ,              { "Read",                  5,  &DeviceHardDrive::ReadSectors } },
 			{ CMD::WRITE,             { "Write",                 5,  &DeviceHardDrive::WriteSectors } },
 			{ CMD::SEEK,              { "Seek",                  5,  &DeviceHardDrive::NotImplemented } },

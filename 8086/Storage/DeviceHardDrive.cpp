@@ -53,10 +53,11 @@ namespace hdd
 		int rc = stat(path, &stat_buf);
 		uint32_t size = stat_buf.st_size;
 
+
 		if (size != geometry.GetImageSize())
 		{
 			LogPrintf(LOG_ERROR, "LoadDiskImage: Image size [%d] incompatible with geometry size [%d]", size, geometry.GetImageSize());
-			return false;
+			return false;  // mod gianni hdd 
 		}
 
 		hscommon::fileUtil::File f(path, "r+b");
@@ -445,6 +446,7 @@ namespace hdd
 		}
 	}
 
+	/*
 	DeviceHardDrive::STATE DeviceHardDrive::NotImplemented()
 	{
 		LogPrintf(LOG_ERROR, "Command [%s] not implemented", m_currCommand->name);
@@ -452,6 +454,27 @@ namespace hdd
 		throw std::exception("not implemented");
 		return STATE::CMD_EXEC_DONE;
 	}
+	*/
+	DeviceHardDrive::STATE DeviceHardDrive::NotImplemented()
+	{
+		// Scrive nel file di log quale comando specifico stiamo ignorando, senza bloccarsi
+		LogPrintf(LOG_WARNING, "Command [%s] called but skipped (Fake Success)", m_currCommand ? m_currCommand->name : "UNKNOWN");
+
+		// Ripuliamo in sicurezza i parametri inviati dal BIOS per questo comando
+		ReadCommandBlock();
+		m_fifo.clear();
+
+		// Diciamo al sistema emulato che il comando è stato eseguito perfettamente
+		m_commandError = false;
+		SetLastState(ERR_OK);
+		PushStatus();
+
+		// Applichiamo un micro-ritardo hardware per l'allineamento dei cicli CPU
+		m_currOpWait = DelayToTicks(10);
+
+		return STATE::CMD_EXEC_DONE;
+	}
+
 
 	void DeviceHardDrive::ReadCommandBlock()
 	{
@@ -746,6 +769,8 @@ namespace hdd
 				uint32_t offset = disk.geometry.CHS2A(m_currCylinder, m_currHead, m_currSector);
 				fseek(disk.data, offset, SEEK_SET);
 				fwrite(m_sectorBuffer, 512, 1, disk.data);
+				// write data sector to disk
+				fflush(disk.data);
 			}
 
 			if (!m_commandBlock.blockCount || m_currcommandID == WRITE_DATA_BUFFER)
@@ -872,4 +897,26 @@ namespace hdd
 			}
 		}
 	}
+	DeviceHardDrive::STATE DeviceHardDrive::FormatTrack()
+	{
+		LogPrintf(LOG_INFO, "COMMAND: %s (Simulated)", m_currCommand->name);
+
+		// Svuota i parametri inviati dal comando BIOS/DOS (Cilindro, testa, ecc.)
+		ReadCommandBlock();
+		assert(m_fifo.size() == 0);
+
+		m_currDrive = m_commandBlock.drive;
+
+		// Rispondi al sistema dicendo che NON ci sono errori
+		m_commandError = false;
+		SetLastState(ERR_OK);
+		PushStatus();
+
+		// Simula un micro-ritardo hardware prima di completare l'operazione
+		m_currOpWait = DelayToTicks(100);
+
+		return STATE::CMD_EXEC_DONE;
+	}
+
+
 }
