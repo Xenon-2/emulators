@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0b9b0876-30dd-4326-ae50-53d9f9d98db6}</ProjectGuid>
+    <RootNamespace>hotkey86emu</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>hotkey86emu</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(SDLLib32);$(SDLImageLib32);$(SDLTTFLib32);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(SDLLib32);$(SDLImageLib32);$(SDLTTFLib32);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(SDLLib64);$(SDLImageLib64);$(SDLTTFLib64);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(SDLLib64);$(SDLImageLib64);$(SDLTTFLib64);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\CoreUI;..\Common</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\CoreUI;..\Common</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\include;F:\new emu\emulators-main\emulators-main\SDL2-devel-2.0.20-VC\SDL2-2.0.20\include;$(ProjectDir);..\CoreUI;..\Common</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2-devel-2.0.20-VC\SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\include;F:\new emu\SDL2-devel-2.0.20-VC\SDL2-2.0.20\include;$(ProjectDir);..\CoreUI;..\Common</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\lib\x64;F:\new emu\SDL2-devel-2.0.20-VC\SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Computer\ComputerBase.cpp" />
+    <ClCompile Include="..\Common\Config.cpp" />
+    <ClCompile Include="..\Common\CPU\CPU.cpp" />
+    <ClCompile Include="..\Common\CPU\CPUInfo.cpp" />
+    <ClCompile Include="..\Common\CPU\Memory.cpp" />
+    <ClCompile Include="..\Common\CPU\MemoryBlock.cpp" />
+    <ClCompile Include="..\Common\CPU\MemoryBlockBase.cpp" />
+    <ClCompile Include="..\Common\CPU\PortConnector.cpp" />
+    <ClCompile Include="..\Common\FileUtil.cpp" />
+    <ClCompile Include="..\Common\IO\Console.cpp" />
+    <ClCompile Include="..\Common\Logger.cpp" />
+    <ClCompile Include="..\Common\Serializable.cpp" />
+    <ClCompile Include="..\Common\Sound\Sound.cpp" />
+    <ClCompile Include="..\Common\Storage\DeviceTape.cpp" />
+    <ClCompile Include="..\Common\UI\MainWindow.cpp" />
+    <ClCompile Include="..\Common\UI\Overlay.cpp" />
+    <ClCompile Include="..\Common\UI\SnapshotInfo.cpp" />
+    <ClCompile Include="..\Common\UI\SnapshotWidget.cpp" />
+    <ClCompile Include="..\Common\UI\TimeFormatter.cpp" />
+    <ClCompile Include="..\Common\Video\CRTController6845.cpp" />
+    <ClCompile Include="..\Common\Video\Video.cpp" />
+    <ClCompile Include="ComputerAT.cpp" />
+    <ClCompile Include="CPU\CPU80186.cpp" />
+    <ClCompile Include="CPU\CPU80286.cpp" />
+    <ClCompile Include="Hardware\Device146818.cpp" />
+    <ClCompile Include="Hardware\Device8042AT.cpp" />
+    <ClCompile Include="Hardware\Device8167.cpp" />
+    <ClCompile Include="Hardware\DeviceDMAPageRegister.cpp" />
+    <ClCompile Include="IO\DeviceKeyboardAT.cpp" />
+    <ClCompile Include="IO\DeviceSerialMouse.cpp" />
+    <ClCompile Include="Sound\DeviceGameBlaster.cpp" />
+    <ClCompile Include="Sound\DeviceSAA1099.cpp" />
+    <ClCompile Include="Sound\DeviceSoundSource.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Storage\CartridgePCjr.cpp" />
+    <ClCompile Include="Computer.cpp" />
+    <ClCompile Include="ComputerPCjr.cpp" />
+    <ClCompile Include="ComputerTandy.cpp" />
+    <ClCompile Include="ComputerXT.cpp" />
+    <ClCompile Include="CPU\CPU8086.cpp" />
+    <ClCompile Include="CPU\CPU8086Test.cpp" />
+    <ClCompile Include="Hardware\Device8237.cpp" />
+    <ClCompile Include="Hardware\Device8250.cpp" />
+    <ClCompile Include="Hardware\Device8254.cpp" />
+    <ClCompile Include="Hardware\Device8255.cpp" />
+    <ClCompile Include="Hardware\Device8255PCjr.cpp" />
+    <ClCompile Include="Hardware\Device8255Tandy.cpp" />
+    <ClCompile Include="Hardware\Device8255XT.cpp" />
+    <ClCompile Include="Hardware\Device8259.cpp" />
+    <ClCompile Include="Storage\DeviceFloppy.cpp" />
+    <ClCompile Include="Storage\DeviceFloppyPCjr.cpp" />
+    <ClCompile Include="Storage\DeviceFloppyTandy.cpp" />
+    <ClCompile Include="Storage\DeviceFloppyXT.cpp" />
+    <ClCompile Include="Storage\DeviceHardDrive.cpp" />
+    <ClCompile Include="IO\DeviceJoystick.cpp" />
+    <ClCompile Include="IO\DeviceKeyboard.cpp" />
+    <ClCompile Include="IO\DeviceKeyboardPCjr.cpp" />
+    <ClCompile Include="IO\DeviceKeyboardTandy.cpp" />
+    <ClCompile Include="IO\DeviceKeyboardXT.cpp" />
+    <ClCompile Include="Sound\DevicePCSpeaker.cpp" />
+    <ClCompile Include="Sound\DeviceSN76489.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="IO\InputEvents.cpp" />
+    <ClCompile Include="IO\Monitor.cpp" />
+    <ClCompile Include="UI\OverlayXT.cpp" />
+    <ClCompile Include="Video\AttributeControllerEGA.cpp" />
+    <ClCompile Include="Video\AttributeControllerVGA.cpp" />
+    <ClCompile Include="Video\CRTControllerEGA.cpp" />
+    <ClCompile Include="Video\CRTControllerVGA.cpp" />
+    <ClCompile Include="Video\DigitalToAnalogConverterVGA.cpp" />
+    <ClCompile Include="video\GraphControllerEGA.cpp" />
+    <ClCompile Include="Video\GraphControllerVGA.cpp" />
+    <ClCompile Include="Video\MemoryEGA.cpp" />
+    <ClCompile Include="Video\MemoryVGA.cpp" />
+    <ClCompile Include="Video\SequencerEGA.cpp" />
+    <ClCompile Include="Video\SequencerVGA.cpp" />
+    <ClCompile Include="Video\Video6845.cpp" />
+    <ClCompile Include="Video\VideoCGA.cpp" />
+    <ClCompile Include="Video\VideoEGA.cpp" />
+    <ClCompile Include="Video\VideoHGC.cpp" />
+    <ClCompile Include="Video\VideoMDA.cpp" />
+    <ClCompile Include="Video\VideoPCjr.cpp" />
+    <ClCompile Include="Video\VideoTandy.cpp" />
+    <ClCompile Include="Video\VideoVGA.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\Computer\ComputerBase.h" />
+    <ClInclude Include="..\Common\Config.h" />
+    <ClInclude Include="..\Common\CPU\CPU.h" />
+    <ClInclude Include="..\Common\CPU\CPUCommon.h" />
+    <ClInclude Include="..\Common\CPU\CPUInfo.h" />
+    <ClInclude Include="..\Common\CPU\Memory.h" />
+    <ClInclude Include="..\Common\CPU\MemoryBlock.h" />
+    <ClInclude Include="..\Common\CPU\MemoryBlockBase.h" />
+    <ClInclude Include="..\Common\CPU\PortConnector.h" />
+    <ClInclude Include="..\Common\FileUtil.h" />
+    <ClInclude Include="..\Common\inipp.h" />
+    <ClInclude Include="..\Common\IO\Console.h" />
+    <ClInclude Include="..\Common\IO\InputEventHandler.h" />
+    <ClInclude Include="..\Common\json.hpp" />
+    <ClInclude Include="..\Common\Logger.h" />
+    <ClInclude Include="..\Common\Serializable.h" />
+    <ClInclude Include="..\Common\Sound\Sound.h" />
+    <ClInclude Include="..\Common\Storage\DeviceTape.h" />
+    <ClInclude Include="..\Common\StringUtil.h" />
+    <ClInclude Include="..\Common\UI\MainWindow.h" />
+    <ClInclude Include="..\Common\UI\Overlay.h" />
+    <ClInclude Include="..\Common\UI\SnapshotInfo.h" />
+    <ClInclude Include="..\Common\UI\SnapshotWidget.h" />
+    <ClInclude Include="..\Common\UI\TimeFormatter.h" />
+    <ClInclude Include="..\Common\Video\CRTController6845.h" />
+    <ClInclude Include="..\Common\Video\Video.h" />
+    <ClInclude Include="..\Common\Video\VideoEvents.h" />
+    <ClInclude Include="ComputerAT.h" />
+    <ClInclude Include="CPU\CPU80186.h" />
+    <ClInclude Include="CPU\CPU80286.h" />
+    <ClInclude Include="CPU\CPUException.h" />
+    <ClInclude Include="Hardware\Device146818.h" />
+    <ClInclude Include="Hardware\Device8042AT.h" />
+    <ClInclude Include="Hardware\Device8167.h" />
+    <ClInclude Include="Hardware\DeviceDMAPageRegister.h" />
+    <ClInclude Include="Hardware\DevicePOSTCard.h" />
+    <ClInclude Include="Hardware\DevicePPI.h" />
+    <ClInclude Include="IO\DeviceKeyboardAT.h" />
+    <ClInclude Include="IO\DeviceSerialMouse.h" />
+    <ClInclude Include="Sound\DeviceGameBlaster.h" />
+    <ClInclude Include="Sound\DeviceSAA1099.h" />
+    <ClInclude Include="Sound\DeviceSoundSource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Storage\CartridgePCjr.h" />
+    <ClInclude Include="Computer.h" />
+    <ClInclude Include="ComputerPCjr.h" />
+    <ClInclude Include="ComputerTandy.h" />
+    <ClInclude Include="ComputerXT.h" />
+    <ClInclude Include="CPU\CPU8086.h" />
+    <ClInclude Include="CPU\CPU8086Test.h" />
+    <ClInclude Include="Hardware\Device8237.h" />
+    <ClInclude Include="Hardware\Device8250.h" />
+    <ClInclude Include="Hardware\Device8254.h" />
+    <ClInclude Include="Hardware\Device8255.h" />
+    <ClInclude Include="Hardware\Device8255PCjr.h" />
+    <ClInclude Include="Hardware\Device8255Tandy.h" />
+    <ClInclude Include="Hardware\Device8255XT.h" />
+    <ClInclude Include="Hardware\Device8259.h" />
+    <ClInclude Include="Storage\DeviceFloppy.h" />
+    <ClInclude Include="Storage\DeviceFloppyPCjr.h" />
+    <ClInclude Include="Storage\DeviceFloppyTandy.h" />
+    <ClInclude Include="Storage\DeviceFloppyXT.h" />
+    <ClInclude Include="Storage\DeviceHardDrive.h" />
+    <ClInclude Include="IO\DeviceJoystick.h" />
+    <ClInclude Include="IO\DeviceKeyboard.h" />
+    <ClInclude Include="IO\DeviceKeyboardPCjr.h" />
+    <ClInclude Include="IO\DeviceKeyboardTandy.h" />
+    <ClInclude Include="IO\DeviceKeyboardXT.h" />
+    <ClInclude Include="Sound\DevicePCSpeaker.h" />
+    <ClInclude Include="Sound\DeviceSN76489.h" />
+    <ClInclude Include="IO\InputEvents.h" />
+    <ClInclude Include="IO\Monitor.h" />
+    <ClInclude Include="UI\OverlayXT.h" />
+    <ClInclude Include="Video\AttributeControllerEGA.h" />
+    <ClInclude Include="Video\AttributeControllerVGA.h" />
+    <ClInclude Include="Video\CRTControllerEGA.h" />
+    <ClInclude Include="Video\CRTControllerVGA.h" />
+    <ClInclude Include="Video\DigitalToAnalogConverterVGA.h" />
+    <ClInclude Include="Video\GraphControllerEGA.h" />
+    <ClInclude Include="Video\GraphControllerVGA.h" />
+    <ClInclude Include="Video\MemoryEGA.h" />
+    <ClInclude Include="Video\MemoryVGA.h" />
+    <ClInclude Include="Video\SequencerEGA.h" />
+    <ClInclude Include="Video\SequencerVGA.h" />
+    <ClInclude Include="Video\Video6845.h" />
+    <ClInclude Include="Video\VideoCGA.h" />
+    <ClInclude Include="Video\VideoEGA.h" />
+    <ClInclude Include="Video\VideoHGC.h" />
+    <ClInclude Include="Video\VideoMDA.h" />
+    <ClInclude Include="Video\VideoPCjr.h" />
+    <ClInclude Include="Video\VideoTandy.h" />
+    <ClInclude Include="Video\VideoVGA.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\80186.json" />
+    <None Include="config\80286.ANS" />
+    <None Include="config\80286.json" />
+    <None Include="config\8086.ANS">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config\8086.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config\config.ini" />
+    <None Include="SDLPath.props" />
+    <None Include="TODO.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\overlay16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreUI\CoreUI.vcxproj">
+      <Project>{83e70e1a-f130-4da9-a8cb-cbd10a5821a0}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

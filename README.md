@@ -1,0 +1,271 @@
+# emulators
+Emulators for 8080-, 6502, Z80 and TMS1000-family CPUs. 
+
+All components/modules/projects are a work in progress and by no means feature complete
+
+- 8080: 8080/8085 Emulator (from https://github.com/hotkeysoft/pfe_cpu8085)
+- 6502
+  - CPU Core, passes standard tests for documented instructions
+  - PET 2001 emulation
+    - BASIC v1/2/4
+    - Load/Save to cassette tape (wip, barely works with raw audio files)
+    - Load PRG files
+    - Sound
+      - 1 bit square wave
+    - Video
+      - 40 column models with no CRTC only
+    - Compatibility
+      - Loaded a lot of BASIC games and most seemed to work file 
+  - VIC20 emulation
+    - RAM configurations: 5,8,16,24,32K
+    - VIC Chip
+      - Video (NTSC/PAL timings)
+      - Sound
+    - Load PRG files
+    - Load/Save to tape (barely, see PET)
+    - Compatibility
+      - Tested with multiples game cartridges, a lot of games seem to work fine
+- **6800/6803** (wip)
+  - CPU Mostly complete (a few missing opcodes such as DAA)
+    - 6803 timers/ports/serial io not implemented
+  - TRS-80 MC-10 Emulation (wip)
+    - BASIC working
+    - MC6847 Video
+      - Only alpha4 and semigraphics4 modes implemented 
+      - Probably wrong timings
+    - Sound (1 bit square wave)
+    - No tape support
+- 6809
+  - CPU Mostly complete (a few missing opcodes such as DAA)
+  - Thomson Computers Emulation
+      - Thomson MO5
+          - Video (custom gate array)
+          - Sound (1 bit square wave)
+          - Light pen
+          - Cartridges
+          - Tape emulation, glitchy
+      - Thomson TO7
+          - Pretty much same features implemented as MO5
+          - 8 KB + optional 16KB RAM extension
+          - Light pen *not* working (yet)
+- 68000
+  - CPU Instructions mostly complete
+    - Next to no timings 
+    - Very not cycle accurate
+  - Macintosh 128k
+    - Completely boots to desktop with stock ROM
+    - Some apps work
+      - A lot crash with an address error... (including MacPaint)
+    - Video
+    - Sound (PCM)
+    - Mouse (a bit glitchy)
+    - No keyboard yet
+    - No RTC yet
+    - VIA (partial)
+    - SCC (bare minimum for mouse support)
+    - 400k floppy drive emulation (internal & external)
+      - IWM, PWM speed control
+      - Loads raw image files
+      - Read speed probably not accurate
+      - No write
+- Z80
+  - CPU Mostly complete, passes standard test suite
+  - Barebones ZX80 emulation
+  - Barebones ZX Spectrum emulation
+  - Amstrad CPC Emulation
+    - CPC464, CPC664, CPC6128
+      - 64K/128K+ configurations
+    - Digital joystick (single)
+    - Video (Gate Array, 6845 CRTC)
+	  - Graphics Modes 0-3
+	  - Fancy stuff probably not working
+    - Sound (AY-3-8912)
+      - Three square wave voices
+      - Noise channel (probably not accurate nor well mixed)
+      - Envelope channel, wip
+	- Floppy emulation
+	  - Load .DSK image files (simple images formats only)
+	- Tape emulation (same bad tape engine that only loads raw files)
+  - Colecovision Emulation
+    - Load 8/16/24/32K ROM Cartridges
+    - Digital joystick (single) with keypad (keyboard numeric pad)
+    - Sound (SN76489)
+    - Video (TMS9918)
+      - Mode 1/2 (Text and multicolor modes not implemented)
+      - Sprites 
+    - Compatibility
+      - Tested with multiples game cartridges, a lot of games seem to work fine
+- 8086: 8086/8088/80186/80286 Emulator + IBM PC components
+  - Most opcodes implemented + some undocumented
+  - Timing / sync between clocked components
+    - No RAM wait states
+    - CPU is not cycle accurate but "good enough"
+  - Partial implementation of debugger/monitor in console
+  - Serial Mouse emulation
+    - Scroll-lock key to enable/disable capture 
+      - Needs to be configurable, easies to disable capture 
+    - Overlay status button shows capture status
+      - Clicking the button enables capture (use scroll-lock to disengage)
+    - This is a real low level emulation, not a bios thing, so you need a mouse driver
+  - Floppy emulation
+    - Most standard image sizes auto detected (160/180/320/360/720/1.2/1.44)
+    - Partial command set (read/write, no format or more obscure commands)
+  - Hard drive emulation
+    - Two image size supported (20M/33M)
+      - Recommend that two images are always loaded, otherwise boot takes ages while looking for second drive... (see if this can be fixed)
+      - If not using hard disks, disable controller in config file for faster boot
+    - Partial command set (read/write, no format or more obscure commands)
+  - IBM PC/XT (5160)
+    - Loads original BIOS ROM (passes POST except 301 error)
+    - Boots various versions of PC/MS-DOS
+    - Various games load from floppy & hdd
+    - Partial emulation of components
+      - Keyboard
+      - μPD765A Floppy drive controller
+      - WD1002S (or compatible rom) Hard drive controller
+      - 8237 DMA controller (for floppy)
+      - 8259 IRQ controller, no exotic modes
+      - 8254 Timer (clock, sound. Modes 1-4)
+      - 8255 Peripheral Interface
+      - CGA graphics
+        - 6845 CRT Controller
+        - CGA text modes
+        - CGA graphic modes (except 16 color composite)
+      - MDA graphics (Monochrome display adapter)
+      - HGC graphics (Hercules, 720x348 monochrome)
+      - EGA graphics
+        - Runs original IBM EGA BIOS
+        - EGA native modes: 320x200x16, 640x350x16
+        - Emulated modes (CGA/MDA) can be set in config file
+        - Mostly complete, need more extensive tests. Some issues:
+          - Glitchy scrolling in some games
+      - VGA graphics
+        - Runs original IBM VGA BIOS (post error)
+        - Mostly complete, need more extensive tests.
+      - Sound
+        - PC Speaker
+        - CMS/Game Blaster (wip)
+        - Disney Sound Source (wip)
+        - Tandy/PCjr (SN76489, see Tandy/PCjr sections)
+  - IBM PC/AT (5170)
+    - Loads original BIOS ROM (passes POST, except for some config mismatches)
+    - Boots various versions of PC/MS-DOS
+    - Various games load from floppy & hdd
+    - Fixed ~8MHz CPU speed for now (IBM BIOS does a speed test...)
+      - A bit slower than fastest XT (~14MHz) so choose wisely 
+    - Partial emulation of components
+      - 80286 CPU
+        -  Real mode: mostly complete
+        -  Protected mode: Enough to pass POST + a bit more
+        -  LOADALL
+      - 8042 Keyboard Controller 
+      - 2nd DMA Controller (unused)
+      - Video: CGA/MDA/HGC/EGA/VGA (see XT section)
+      - Sound: PC Speaker / CMS / DSS
+        - No Tandy/PCjr sound on AT (port conflict)
+
+  - IBM PCjr
+    - Loads original BIOS ROM (passes POST) 
+    - Shares many components w/XT (8254, 8255, 8259, fdc, speaker)
+    - Some cartridge games work
+    - Floppy loads some booter games
+    - Many versions of DOS give COMMAND.COM memory error, TODO
+    - Additional or PCjr-specific components
+      - 8250 UART, only for POST test at the moment 
+      - Cartridges (no dynamic load)
+      - Floppy (no DMA/IRQ, watchdog)
+      - Keyboard (serial data stream)
+      - PCjr graphics
+        - Map B800 window in main memory
+        - Special modes, indexed colors
+  - Tandy 1000
+    - Loads original Tandy 1000 (base model) BIOS ROM (passes POST)
+    - Shares components w/XT (8254, 8255, 8259, fdc, hdd, speaker)
+    - 360Kx2 floppy drives
+    - Loads MS-DOS 2.11 (Tandy version)
+	- Loads and runs Deskmate 1.01
+	- Runs many games from floppy or hard disk
+    - Additional Tandy 1000 components
+      - Base/video RAM relocation
+      - Keyboard (different mapping, busy flag)
+      - TGA graphics (mostly compatible with CGA and PCjr)
+  - Sound module: SN76489
+    - PCjr, Tandy (usable in XT, but disabled)
+    - 3 voices + noise channel
+    - Mostly working
+  - Joystick support
+    - Uses first connected game controller 
+    - X-Y analog stick, A-B buttons
+
+- TMS1000: TMS1000/1100/1400/1700 Emulator (used in old electronic games)
+  - Simple monitor
+  - Simple front-end to test for the following games:
+    - Simon (Milton Bradley)
+    - Merlin / Master Merlin (Parker Brothers)
+    - Split Second (Parker Brothers)
+    - Pocket Repeat (Radio Shack)
+   - Emulator core is portable and used in three Arduino Atmega328p projects
+     - [Repeat Electronic Game](https://github.com/hotkeysoft/repeatElectronicGame-kicad) (Pocket Repeat ROM)
+     - [Wizard Electronic Game](https://github.com/hotkeysoft/wizardElectronicGame-kicad) (Merlin / Master Merlin ROM)
+     - [LED Matrix Game](https://github.com/hotkeysoft/ledMatrixGame-kicad) (Pocket Repeat ROM)
+
+
+- Common (shared between projects)
+  - Config file support (config/config.ini)
+    - architecture, base ram, video mode, monitor, log levels 
+  - Terminal window + Display in separate SDL window
+  - Snapshots of CPU+RAM+Most component states
+    - Exception: storage (floppy/hdd) not persisted
+    - Restore snapshots with different hardware configuration
+      - Minimally tested
+  - GUI Overlay
+    - Frame rate indicator
+    - Soft/hard restart (shift for hard)
+    - Load/eject floppies
+    - Swap hard drives (need reboot)
+    - Load/Restore snapshot
+      - Can browse all snapshots (shift-click restore button)
+      - Edit snapshot: Add description, delete
+    - Toggle clock speed, warp mode
+    - Joystick trimming/fine adjust
+
+## Compatibility (PC emulator)
+
+(I need to make a compatibility grid)
+
+A lot of old XT games work fine:
+- Bootable floppies
+  - Mostly old arcade games (Montezuma, Tapper, etc) 
+- DOS Games
+  - Most AGI/SCI Sierra games (CGA/EGA/Tandy)
+    - Save states are awesome for annoying "arcade" sections, quicker than F5/F7 spamming
+    - Space Quest I-III (100%)
+    - Leisure Suit Larry I-III (100%)
+    - King's Quest I-IV (not played through)
+    - Police Quest I-IV (not played through)
+    - Quest For Glory I-II  (not played through)
+    - Some VGA Games booted (SQ1VGA, PQ1VGA, SQ4, LSL5, etc)
+      - A bit too slow on to be fun 
+  - A lot of Apogee games
+    - Jerky scroll issues in Commander Keen
+  - Misc other games in no particular order (not thoroughly tested but seem to work fine): Another World, Prince of Persia, Ys, Monkey Island (both CGA/EGA + VGA versions), Arkanoid 1&2, Thexder 1&2, Bard's Tales 1&2, Les Manley Lost in LA/Search for the King, Eye of the Beholder, Rick Dangerous, Lemmings, Simpsons Arcade Game, Jill of the Jungle, Tunnels of Armageddon, Moon Base, SimCity (original), FlixMix, Populous, Kyrandia
+  - The "fanciest" games it runs on AT/286:
+    - Wolfenstein 3D (AT/286)
+    - Alone in the Dark
+      - Both are slow and need Adlib to be fun... 
+  - Windows
+    - Windows 1&2 seem to work
+    - Unable to make Windows 3.0+ working at the moment
+
+## TODO
+- Merge common code
+  - Started 
+- Document the installation, files/directories required
+  - Maybe make an installer for the PC emulator
+  - Make emulator more robust/verbose when basics things are missing (roms, directories, etc)
+- PC: Fix annoying crash on soft reboot, only hard reboot works at the moment (shift-reboot in the GUI overlay)
+- Split emulators in different repositories (still debating)
+- Adlib... started, I *hate* FM sound (well, not the sound, but the understanding/coding part)
+- Compatibility grid for PC games
+- Screenshots and stuff
+- Window scaling is... not the best. Certainly not pixel accurate. Need to take borders into account in calculations

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{83E70E1A-F130-4DA9-A8CB-CBD10A5821A0}</ProjectGuid>
+    <RootNamespace>CoreUI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CoreUI</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="SDLPath.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(SDLLib64);$(SDLImageLib64);$(SDLTTFLib64);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>$(SDLLib64);$(SDLImageLib64);$(SDLTTFLib64);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(SDLLib32);$(SDLImageLib32);$(SDLTTFLib32);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(SDLLib32);$(SDLImageLib32);$(SDLTTFLib32);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\include;F:\new emu\emulators-main\emulators-main\SDL2-devel-2.0.20-VC\SDL2-2.0.20\include;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>COREUI_EXPORTS;_WINDOWS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2-devel-2.0.20-VC\SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>Copying SDL dlls to output dir</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>COREUI_EXPORTS;_WINDOWS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying SDL dlls to output dir</Message>
+      <Command>xcopy /Y "$(SDLLib32)\*.dll" "$(OutDir)"
+xcopy /Y "$(SDLImageLib32)\*.dll" "$(OutDir)"
+xcopy /Y "$(SDLTTFLib32)\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>COREUI_EXPORTS;_WINDOWS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copying SDL dlls to output dir</Message>
+      <Command>xcopy /Y "$(SDLLib32)\*.dll" "$(OutDir)"
+xcopy /Y "$(SDLImageLib32)\*.dll" "$(OutDir)"
+xcopy /Y "$(SDLTTFLib32)\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\include;F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\include;F:\new emu\SDL2-devel-2.0.20-VC\SDL2-2.0.20\include;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>COREUI_EXPORTS;_WINDOWS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <Profile>true</Profile>
+      <AdditionalLibraryDirectories>F:\new emu\emulators-main\emulators-main\SDL2_image-2.8.4\lib\x64;F:\new emu\emulators-main\emulators-main\SDL2_ttf-devel-2.24.0-VC\SDL2_ttf-2.24.0\lib\x64;F:\new emu\SDL2-devel-2.0.20-VC\SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>Copying SDL dlls to output dir</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Color.cpp" />
+    <ClCompile Include="Core\Grid.cpp" />
+    <ClCompile Include="Core\Point.cpp" />
+    <ClCompile Include="Core\Rect.cpp" />
+    <ClCompile Include="Core\ResourceManager.cpp" />
+    <ClCompile Include="Core\Tooltip.cpp" />
+    <ClCompile Include="Core\Widget.cpp" />
+    <ClCompile Include="Core\Window.cpp" />
+    <ClCompile Include="Core\WindowManager.cpp" />
+    <ClCompile Include="ResourceMap.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Util\WinResource.cpp" />
+    <ClCompile Include="Widgets\Button.cpp" />
+    <ClCompile Include="Widgets\Image.cpp" />
+    <ClCompile Include="Widgets\ImageMap.cpp" />
+    <ClCompile Include="Widgets\Label.cpp" />
+    <ClCompile Include="Widgets\Menu.cpp" />
+    <ClCompile Include="Widgets\MenuItem.cpp" />
+    <ClCompile Include="Widgets\ScrollBars.cpp" />
+    <ClCompile Include="Widgets\TextBox.cpp" />
+    <ClCompile Include="Widgets\Toolbar.cpp" />
+    <ClCompile Include="Widgets\ToolbarItem.cpp" />
+    <ClCompile Include="Widgets\Tree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CoreUI.h" />
+    <ClInclude Include="Core\Color.h" />
+    <ClInclude Include="Core\Grid.h" />
+    <ClInclude Include="Core\Point.h" />
+    <ClInclude Include="Core\Rect.h" />
+    <ClInclude Include="Core\ResourceManager.h" />
+    <ClInclude Include="Core\Timer.h" />
+    <ClInclude Include="Core\Tooltip.h" />
+    <ClInclude Include="Core\Widget.h" />
+    <ClInclude Include="Core\Window.h" />
+    <ClInclude Include="Core\WindowManager.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceMap.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Util\ClipRect.h" />
+    <ClInclude Include="Util\PlatformResource.h" />
+    <ClInclude Include="Util\RenderTarget.h" />
+    <ClInclude Include="Widgets\Button.h" />
+    <ClInclude Include="Widgets\Image.h" />
+    <ClInclude Include="Widgets\ImageMap.h" />
+    <ClInclude Include="Widgets\Label.h" />
+    <ClInclude Include="Widgets\Menu.h" />
+    <ClInclude Include="Widgets\MenuItem.h" />
+    <ClInclude Include="Widgets\ScrollBars.h" />
+    <ClInclude Include="Widgets\TextBox.h" />
+    <ClInclude Include="Widgets\Toolbar.h" />
+    <ClInclude Include="Widgets\ToolbarItem.h" />
+    <ClInclude Include="Widgets\Tree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CoreUI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\widget15x15.png" />
+    <Image Include="Resources\widget24x24.png" />
+    <Image Include="Resources\widget8x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\FiraMono-Regular.ttf" />
+    <Font Include="Resources\Oxygen-Bold.ttf" />
+    <Font Include="Resources\Oxygen-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="SDLPath.props" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

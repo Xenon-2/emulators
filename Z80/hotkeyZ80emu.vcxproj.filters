@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{7587a590-80d0-4e2b-8542-a3f69cccbc45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd Party">
+      <UniqueIdentifier>{1a215ba4-0f3a-445a-927d-c6ccf2f47b7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{537a59af-279f-4d29-9067-1e0d305f560c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CPU">
+      <UniqueIdentifier>{e5882df9-65d5-4888-80ea-e116bdfce791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{1f08f00c-9a7f-402f-b296-819480658596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Video">
+      <UniqueIdentifier>{ff7f47fd-f67e-4971-8c5a-8636afaa2d17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CPU">
+      <UniqueIdentifier>{4bbc57f0-c69c-4581-a49a-e908c72f86de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Video">
+      <UniqueIdentifier>{05277315-8af1-4a78-bdc9-bd0a618e6991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IO">
+      <UniqueIdentifier>{90eafa35-4cc9-499c-ad14-b830248ccdca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CPU\test">
+      <UniqueIdentifier>{b9c13943-8c72-417e-b94f-9c7b72757c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\CPU">
+      <UniqueIdentifier>{7f59201c-b6b1-4a48-ae69-20b35db870be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\IO">
+      <UniqueIdentifier>{4e894c8f-05b5-4ee0-b434-f0cd109e86bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Sound">
+      <UniqueIdentifier>{24cb6e53-251b-476c-8e7a-28226a24b983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\UI">
+      <UniqueIdentifier>{3e414cb6-cee9-48fa-83cd-1d2623e55592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Video">
+      <UniqueIdentifier>{3f0c064d-a873-426e-b826-68a865cc4def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Computer">
+      <UniqueIdentifier>{1d3273e8-825d-4543-a01b-693f57e3f1bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Storage">
+      <UniqueIdentifier>{34624d5b-626e-4d34-a78a-ff7acc16ffac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sound">
+      <UniqueIdentifier>{223b08c5-25ec-402a-9b95-8320660d065a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sound">
+      <UniqueIdentifier>{00f4d7a3-57da-4b22-9eda-1891ebb16434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hardware">
+      <UniqueIdentifier>{6ea13cc6-8ecd-49db-9c90-124900c3ef0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hardware">
+      <UniqueIdentifier>{981f8293-dec1-46f8-a808-50b84a294e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Storage">
+      <UniqueIdentifier>{cb19781e-a74e-4bee-9980-f17434cc5826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Storage">
+      <UniqueIdentifier>{4b8032ed-f5d7-4e85-9609-68e7250da988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{1b8e2211-5029-4862-bae6-fed4c46674f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{b8e37a08-bc6b-4f20-9552-3475f9e19d7c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Logger.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\StringUtil.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\inipp.h">
+      <Filter>3rd Party</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\json.hpp">
+      <Filter>3rd Party</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\Monitor8080.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\CPU8080.h">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\CPUZ80.h">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Computer8080.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\MonitorZ80.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeDetectLatch.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\VideoZX80.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\DeviceKeyboardZX80.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerZX80.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerZ80.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\CPUZ80Test.h">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\test\daa.h">
+      <Filter>Header Files\CPU\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\CPU.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\Memory.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\MemoryBlock.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Serializable.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\CPUCommon.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\PortConnector.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\CPUInfo.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerZXSpectrum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\VideoZXSpectrum.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\Console.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Sound\Sound.h">
+      <Filter>Common\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CPU\MemoryBlockBase.h">
+      <Filter>Common\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\MainWindow.h">
+      <Filter>Common\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\InputEventHandler.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\Video.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\VideoEvents.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SnapshotInfo.h">
+      <Filter>Common\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SnapshotWidget.h">
+      <Filter>Common\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\TimeFormatter.h">
+      <Filter>Common\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\Overlay.h">
+      <Filter>Common\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Computer\ComputerBase.h">
+      <Filter>Common\Computer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Storage\DeviceTape.h">
+      <Filter>Common\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FileUtil.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerColecoVision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\VideoColecoVision.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\TMS9918.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\DeviceJoystick.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\DeviceJoystickDigital.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\DeviceKeyboard.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IO\InputEvents.h">
+      <Filter>Common\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\DeviceJoystickColecoVision.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\DeviceSN76489.h">
+      <Filter>Header Files\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Storage\CartridgeLoader.h">
+      <Filter>Common\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerCPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\VideoCPC.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BitMask.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\CRTController6845.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="Video\CRTControllerCPC.h">
+      <Filter>Header Files\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\Device8255.h">
+      <Filter>Header Files\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\DevicePPI.h">
+      <Filter>Header Files\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\Device8255CPC.h">
+      <Filter>Header Files\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\DeviceKeyboardCPC.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Storage\DeviceFloppy.h">
+      <Filter>Header Files\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Storage\DeviceFloppyCPC.h">
+      <Filter>Header Files\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\OverlayCPC.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\DeviceAY-3-891x.h">
+      <Filter>Header Files\Sound</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Logger.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\Monitor8080.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU\CPU8080.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU\CPUZ80.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Computer8080.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\MonitorZ80.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Video\VideoZX80.cpp">
+      <Filter>Source Files\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerZX80.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerZ80.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU\CPUZ80Test.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\CPU.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\Memory.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\MemoryBlock.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Serializable.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\PortConnector.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Config.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\CPUInfo.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerZXSpectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Video\VideoZXSpectrum.cpp">
+      <Filter>Source Files\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\IO\Console.cpp">
+      <Filter>Common\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Sound\Sound.cpp">
+      <Filter>Common\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CPU\MemoryBlockBase.cpp">
+      <Filter>Common\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\MainWindow.cpp">
+      <Filter>Common\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Video\Video.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SnapshotInfo.cpp">
+      <Filter>Common\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SnapshotWidget.cpp">
+      <Filter>Common\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\TimeFormatter.cpp">
+      <Filter>Common\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\Overlay.cpp">
+      <Filter>Common\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Computer\ComputerBase.cpp">
+      <Filter>Common\Computer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Storage\DeviceTape.cpp">
+      <Filter>Common\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FileUtil.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerColecoVision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Video\VideoColecoVision.cpp">
+      <Filter>Source Files\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="Video\TMS9918.cpp">
+      <Filter>Source Files\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\IO\DeviceJoystick.cpp">
+      <Filter>Common\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\IO\DeviceJoystickDigital.cpp">
+      <Filter>Common\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\IO\InputEvents.cpp">
+      <Filter>Common\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\DeviceKeyboardZX80.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\DeviceJoystickColecoVision.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\DeviceSN76489.cpp">
+      <Filter>Source Files\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerCPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Video\VideoCPC.cpp">
+      <Filter>Source Files\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Video\CRTController6845.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Device8255.cpp">
+      <Filter>Source Files\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Device8255CPC.cpp">
+      <Filter>Source Files\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\DeviceKeyboardCPC.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Storage\DeviceFloppy.cpp">
+      <Filter>Source Files\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="Storage\DeviceFloppyCPC.cpp">
+      <Filter>Source Files\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\OverlayCPC.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\DeviceAY-3-891x.cpp">
+      <Filter>Source Files\Sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDLPath.props" />
+    <None Include="config\config.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\Z80.ANS">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\Z80.json">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\8080.ANS">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\8080.json">
+      <Filter>config</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\overlay16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
